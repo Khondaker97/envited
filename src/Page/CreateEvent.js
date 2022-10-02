@@ -6,7 +6,7 @@ const initialValues = {
   hostName: "",
   startTime: "",
   endTime: "",
-  location: "",
+  address: "",
 };
 
 const CreateEvent = () => {
@@ -19,11 +19,10 @@ const CreateEvent = () => {
       ...event,
       [name]: value,
     });
-    console.log(event);
   };
   const NextPage = (e) => {
     e.preventDefault();
-    navigate("/event", { event });
+    navigate("/event", { state: event });
   };
   return (
     <div className={styles.container}>
@@ -72,8 +71,8 @@ const CreateEvent = () => {
         <input
           className={styles.location}
           type="text"
-          name="location"
-          value={event.location}
+          name="address"
+          value={event.address}
           placeholder="Location"
           onChange={(e) => changeHandler(e)}
         />
