@@ -1,0 +1,14 @@
+.nextBtn {
+  display: flex;
+  justify-content: center;
+}
+.nextBtn button {
+  width: 80%;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #8456ec 3.25%, #e87bf8 100%);
+  border-radius: 10px;
+  border: none;
+  color: #ffffff;
+}
