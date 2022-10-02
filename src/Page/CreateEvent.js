@@ -21,15 +21,18 @@ const CreateEvent = () => {
     });
     console.log(event);
   };
-  const NextPage = () => {
+  const NextPage = (e) => {
+    e.preventDefault();
     navigate("/event", { event });
   };
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Create Your Event</h1>
       <form className={styles.event}>
-        <label htmlFor="img">Upload Event Image</label>
-        <input type="file" name="image" accept=".jpeg, .png, .jpg" id="img" />
+        <div className={styles.uploadImg}>
+          <label htmlFor="img">Upload Event Image</label>
+          <input type="file" name="image" accept=".jpeg, .png, .jpg" id="img" />
+        </div>
         <div className={styles.name}>
           <input
             type="text"
@@ -67,6 +70,7 @@ const CreateEvent = () => {
           />
         </div>
         <input
+          className={styles.location}
           type="text"
           name="location"
           value={event.location}
@@ -74,7 +78,9 @@ const CreateEvent = () => {
           onChange={(e) => changeHandler(e)}
         />
         <div className={styles.nextBtn}>
-          <button onClick={NextPage}>Next</button>
+          <button type="submit" onClick={NextPage}>
+            Next
+          </button>
         </div>
       </form>
     </div>
