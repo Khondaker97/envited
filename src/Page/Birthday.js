@@ -7,6 +7,8 @@ import { MdArrowForwardIos } from "react-icons/md";
 import Location from "../assets/icons/Location.png";
 import Calendar from "../assets/icons/Calendar.png";
 
+import EventImage from "../assets/Images/EventImage.png";
+
 const Birthday = () => {
   const location = useLocation();
   console.log(location.state);
@@ -16,15 +18,17 @@ const Birthday = () => {
       <div className={styles.wrapper}>
         <div className={styles.details}>
           <div className={styles.host}>
-            <h1 className={styles.eventName}>Birthday {eventName}</h1>
+            <h1 className={styles.eventName}>{eventName}</h1>
             <h3>
-              Hosted by<span className={styles.name}>{hostName}</span>
+              Hosted by <span className={styles.name}> {hostName}</span>
             </h3>
           </div>
 
-          <ul>
+          <ul className={styles.eventSchedule}>
             <li>
-              <img src={Calendar} alt="calendar" />
+              <div className={styles.image}>
+                <img src={Calendar} alt="calendar" />
+              </div>
               <div className={styles.date}>
                 <p className="from">{startTime}</p>
                 <p className="to">
@@ -34,7 +38,9 @@ const Birthday = () => {
               <MdArrowForwardIos />
             </li>
             <li>
-              <img src={Location} alt="location" />
+              <div className={styles.image}>
+                <img src={Location} alt="location" />
+              </div>
               <div className={styles.location}>
                 <p>Street Name</p>
                 <p className="address">{address}</p>
@@ -44,7 +50,7 @@ const Birthday = () => {
           </ul>
         </div>
         <div className={styles.eventImg}>
-          <img src="" alt="host" />
+          <img src={EventImage} alt="host" />
         </div>
       </div>
     </div>
